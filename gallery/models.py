@@ -29,4 +29,10 @@ class Category(models.Model):
     def all_categories(cls):
         categories=cls.objects.all()
         return categories
-              
+
+class Image(models.Model):
+    image = models.ImageField(upload_to='images/', blank=True)
+    name = models.CharField(max_length=30)
+    description = HTMLField()
+    location=models.ForeignKey(Location,on_delete=models.CASCADE)
+    category=models.ManyToManyField(Category)              
