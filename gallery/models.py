@@ -46,3 +46,8 @@ class Image(models.Model):
     def show_by_category(cls, category):
         images = cls.objects.filter(category=category)
         return images              
+
+    @classmethod
+    def show_by_location(cls, location):
+        images = cls.objects.filter(location=location)
+        return images    
