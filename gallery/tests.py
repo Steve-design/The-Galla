@@ -22,4 +22,9 @@ class TestImage(TestCase):
     def test_delete_image(self):
         self.office.save()
         self.office.delete()
-        self.assertTrue(len(Image.objects.all()) == 0)       
+        self.assertTrue(len(Image.objects.all()) == 0) 
+
+    def test_update(self):
+        self.office.save()
+        self.office.name = 'update_office'
+        self.assertTrue(self.office.name == 'update_office')          
