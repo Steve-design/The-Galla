@@ -1,0 +1,59 @@
+{%extends 'images/base.html'%}
+{% block content %}
+<div class="container">
+<br>
+
+    {% if images%}
+      <h1 style="color:#0d47a1">Found {{ images|length }} images of searched term : {{message}}</h1>
+
+    {% else %}
+    <br>
+
+        <h1 style="color:#0d47a1"> Found 0 images for the search term : {{message}}</h1>
+
+
+    {% endif %}
+
+
+<br>
+  {% if images %}
+      <div class="card-columns">
+
+    {% for image in images %}  <div class="card border-secondary">
+    <img class="card-img-top" src="{{image.image.url}}" class="img-responsive" alt="Image" size="100px200" type="button" class="btn btn-primary" data-toggle="modal" data-target="#{{image.id}}">
+
+  </div>
+
+    <!-- Modal -->
+<div class="modal fade" id="{{image.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">{{image.name}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+  <img class="card-img-top" src="{{image.image.url}}" class="img-responsive" alt="Image" size="100px200">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+      {% empty %}
+  <div class="row">
+    <h2 class="text-center">There is no images here</h2>
+  </div>
+
+    {% endfor %}
+  {% endif %}
+      </div>
+                </div>
+
+
+{% endblock %}
