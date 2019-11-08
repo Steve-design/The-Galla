@@ -43,4 +43,12 @@ class TestImage(TestCase):
     def test_view_location(self):
         self.office.save()
         location = Image.show_by_location(self.lagos)
-        self.assertTrue(len(location) > 0)                
+        self.assertTrue(len(location) > 0)    
+
+class TestCategories (TestCase):
+    def setUp(self):
+        self.nature = Category(name='city')
+
+    def test_instance(self):
+        self.nature.save()
+        self.assertTrue(isinstance(self.city, Category))                    
