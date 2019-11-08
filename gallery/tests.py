@@ -14,3 +14,7 @@ class TestImage(TestCase):
 
         self.office.category.add(self.scenery)
         self.office.category.add(self.hotels)
+
+    def test_instance(self):
+        self.office.save()
+        self.assertTrue(isinstance(self.office, Image))    
