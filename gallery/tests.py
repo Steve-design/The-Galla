@@ -38,4 +38,9 @@ class TestImage(TestCase):
         self.office.save()
         cat = Category.objects.filter(name='scenery')
         images = Image.show_by_category(cat)
-        self.assertTrue(len(images) > 0)             
+        self.assertTrue(len(images) > 0) 
+
+    def test_view_location(self):
+        self.office.save()
+        location = Image.show_by_location(self.lagos)
+        self.assertTrue(len(location) > 0)                
