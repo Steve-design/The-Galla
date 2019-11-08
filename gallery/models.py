@@ -23,4 +23,10 @@ class Category(models.Model):
     name = models.CharField(max_length=30)
 
     def __str__(self):
-        return self.name            
+        return self.name  
+
+    @classmethod
+    def all_categories(cls):
+        categories=cls.objects.all()
+        return categories
+              
