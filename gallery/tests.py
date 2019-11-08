@@ -51,4 +51,12 @@ class TestCategories (TestCase):
 
     def test_instance(self):
         self.nature.save()
-        self.assertTrue(isinstance(self.city, Category))                    
+        self.assertTrue(isinstance(self.city, Category)) 
+
+class TestLocation (TestCase):
+    def setUp(self):
+        self.capetown = Location(name='Capetown')
+
+    def test_instance(self):
+        self.capetown.save()
+        self.assertTrue(isinstance(self.capetown, Location))                           
