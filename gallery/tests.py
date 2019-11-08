@@ -17,4 +17,9 @@ class TestImage(TestCase):
 
     def test_instance(self):
         self.office.save()
-        self.assertTrue(isinstance(self.office, Image))    
+        self.assertTrue(isinstance(self.office, Image)) 
+
+    def test_delete_image(self):
+        self.office.save()
+        self.office.delete()
+        self.assertTrue(len(Image.objects.all()) == 0)       
