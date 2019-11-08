@@ -50,4 +50,9 @@ class Image(models.Model):
     @classmethod
     def show_by_location(cls, location):
         images = cls.objects.filter(location=location)
-        return images    
+        return images
+
+    @classmethod
+    def all_images(cls):
+        images = cls.objects.all()
+        return images        
