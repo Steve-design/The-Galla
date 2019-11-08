@@ -35,4 +35,9 @@ class Image(models.Model):
     name = models.CharField(max_length=30)
     description = HTMLField()
     location=models.ForeignKey(Location,on_delete=models.CASCADE)
-    category=models.ManyToManyField(Category)              
+    category=models.ManyToManyField(Category)  
+
+    @classmethod
+    def search_by_name(cls,search_term):
+        images = cls.objects.filter(name__icontains=search_term)
+        return images            
