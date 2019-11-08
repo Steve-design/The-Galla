@@ -17,4 +17,10 @@ class Location(models.Model):
         return locations
 
     class Meta:
-        ordering = ['name']       
+        ordering = ['name']   
+
+class Category(models.Model):
+    name = models.CharField(max_length=30)
+
+    def __str__(self):
+        return self.name            
