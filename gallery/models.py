@@ -40,4 +40,9 @@ class Image(models.Model):
     @classmethod
     def search_by_name(cls,search_term):
         images = cls.objects.filter(name__icontains=search_term)
-        return images            
+        return images  
+
+    @classmethod
+    def show_by_category(cls, category):
+        images = cls.objects.filter(category=category)
+        return images              
