@@ -32,4 +32,10 @@ class TestImage(TestCase):
     def test_all_images(self):
         self.office.save()
         images = Image.all_images()
+        self.assertTrue(len(images) > 0)    
+
+    def test_show_by_category(self):
+        self.office.save()
+        cat = Category.objects.filter(name='scenery')
+        images = Image.show_by_category(cat)
         self.assertTrue(len(images) > 0)             
