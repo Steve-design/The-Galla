@@ -27,4 +27,9 @@ class TestImage(TestCase):
     def test_update(self):
         self.office.save()
         self.office.name = 'update_office'
-        self.assertTrue(self.office.name == 'update_office')          
+        self.assertTrue(self.office.name == 'update_office') 
+
+    def test_all_images(self):
+        self.office.save()
+        images = Image.all_images()
+        self.assertTrue(len(images) > 0)             
