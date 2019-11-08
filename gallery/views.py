@@ -66,4 +66,11 @@ def show_locations(request):
     # if request.GET.get("category")):
     #     images = Image.filter_by_category(request.GET.get("category"))
 
-    return render(request, 'images/homepage.html', {"locations":locations, "images":images })        
+    return render(request, 'images/homepage.html', {"locations":locations, "images":images })
+
+
+def my_locations(request):
+    locations=Location.objects.all()
+    images = Image.all_images()
+
+    return render(request, 'images/homepage.html', {"locations":locations, "images":images })            
