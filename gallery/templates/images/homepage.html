@@ -5,7 +5,7 @@
 
 <div class="container">
 
-    <h1 style="text-align:center; color:#0d47a1" class="display-3">Capture the World in Awesome Photos</h1>
+    <h1 style="text-align:center; color:#0d47a1" class="display-3">View the World in Awesome Mzalendo Gallery</h1>
 
     {% for category in categories %}
 
@@ -49,14 +49,14 @@
 
 
 
-<button class="btn btn-primary" value="https://cherucole-photos.herokuapp.com{{image.image.url}}" onclick="copytext(this.value)">Copy
+<button class="btn btn-primary" value="https://mzalendo-galla.herokuapp.com{{image.image.url}}" onclick="copytext(this.value)">Copy
            link</button>      </div>
     </div>
   </div>
 </div>
       {% empty %}
   <div class="row">
-    <h2 class="text-center">There is no images here</h2>
+    <h2 class="text-center">There are no images here</h2>
   </div>
       {% endfor %}
 
