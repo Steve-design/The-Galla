@@ -5,11 +5,11 @@
 
 <div class="container">
 
-    <h1 style="text-align:center; color: maroon" class="display-4">Awesome Mzalendo Gallery</h1>
+    <h1 style="text-align:center; color:grey" class="display-4">Awesome Mzalendo Gallery</h1>
 
     {% for category in categories %}
 
-    <a href="/?category={{category.id}}"> <button class="btn btn-lg btn-link"> #{{category.name}}</button></a>
+    <a href="/?category={{category.id}}"> <button class="btn btn-lg btn-link"> {{category.name}}</button></a>
 
           {% endfor %}
 

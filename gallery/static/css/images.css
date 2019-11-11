@@ -1,10 +1,13 @@
+body{
+  background-color: black;
+}
 h1
 {
-  font-family: 'Dancing Script', cursive;
+  font-family: 'DM Serif Text', serif;
 }
 
 h2{
-font-family: 'Slabo 27px', serif;
+  font-family: 'IM Fell English SC', serif;
 
 }
 
