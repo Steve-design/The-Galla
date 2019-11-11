@@ -1,1 +1,1 @@
-web: gunicorn galla.wsgi --log-file -
+web: gunicorn galla.wsgi 
