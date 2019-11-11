@@ -1,5 +1,6 @@
 from django.db import models
 from tinymce.models import HTMLField
+from fontawesome.fields import IconField
 
 # Create your models here.
 class Location(models.Model):
@@ -29,6 +30,7 @@ class Category(models.Model):
     def all_categories(cls):
         categories=cls.objects.all()
         return categories
+    
 
 class Image(models.Model):
     image = models.ImageField(upload_to='images/', blank=True)
