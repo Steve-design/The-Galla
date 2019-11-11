@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'gallery',
     'bootstrap4',
     'tinymce',
+    'fontawesome',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
